@@ -12,7 +12,7 @@ import {
 
 //  Firebase Config
 const firebaseConfig = {
-  apiKey: "AIzaSyBfiwyCGXeolzeNiZp6mGv-E4J7zrTrbfo",
+  apiKey: "",
   authDomain: "loginapp-58501.firebaseapp.com",
   projectId: "loginapp-58501",
   storageBucket: "loginapp-58501.appspot.com",
