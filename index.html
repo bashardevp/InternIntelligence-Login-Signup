@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Signup Page by Mubasher</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./src/Images/logo.jpg"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"
+    ></script>
+    <script type="module" src="src/js/script.js"></script>
+  </head>
+  <body>
+    <main class="flex">
+      <div class="auth-wrapper flex">
+        <!-- Reset Password Starts Here -->
+        <div class="auth-reset-password flex hidden">
+          <div class="auth-reset-header">
+            <i class="fa-solid fa-unlock-keyhole"></i>
+            <h1 class="auth-reset-heading">Reset Password</h1>
+            <p>Enter your email to reset your password</p>
+          </div>
+
+          <form class="auth-reset-form flex" id="reset-password-form">
+            <div class="input-group flex">
+              <i class="fa-regular fa-envelope"></i>
+              <input
+                type="email"
+                class="reset-email"
+                placeholder="Enter your email"
+              />
+            </div>
+
+            <button type="submit" class="btn-reset-password action-forget-btns">
+              Reset Password
+            </button>
+            <div class="message-box"></div>
+          </form>
+
+          <button
+            class="btn-back-to-login action-forget-btns"
+            style="margin-top: 1rem"
+          >
+            Back to Login
+          </button>
+        </div>
+        <!-- Reset Password Ends Here -->
+        <!-- SignIn Start Here-->
+        <div class="info-container info-signin">
+          <img src="src/Images/Dashboard Background Design.jpg" />
+          <div class="overlay-container">
+            <h1>Welcome Back</h1>
+            <p>Login To Get Started</p>
+            <p>Access your account and manage everything in one place</p>
+
+            <br />
+            <button
+              type="submit"
+              class="info-btn-signup overlay-switch-signup-btn"
+            >
+              Create Account
+            </button>
+          </div>
+        </div>
+
+        <div class="auth-container auth-signin">
+          <div class="auth-header auth-signin-header">
+            <i class="fa-regular fa-circle-user"></i>
+            <h1 class="auth-heading">Welcome Back</h1>
+            <p>
+              Doesn't have an account?
+              <a href="#" class="overlay-switch-signup-text">Register</a>
+            </p>
+            <br />
+          </div>
+          <form action="submit" id="signin-form" class="auth-form flex">
+            <div class="input-group flex">
+              <i class="fa-regular fa-envelope"></i>
+              <input
+                type="email"
+                class="signin-email"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div class="input-group flex">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                type="password"
+                class="signin-password"
+                placeholder="Password"
+                required
+              />
+              <i class="fa-regular fa-eye-slash toggle-password"></i>
+            </div>
+
+            <button type="submit" class="btn-signin">Sign In</button>
+            <div class="message-box"></div>
+          </form>
+          <div class="auth-options flex">
+            <label class="remember-label flex">
+              <input type="checkbox" class="remember-checkbox" />
+              Remember me
+            </label>
+            <a href="#" class="forgot-link">Forgot Password?</a>
+          </div>
+          <p class="alternative-auth-label flex"><span></span>or login with</p>
+          <!-- Social Signup Buttons -->
+          <div class="social-auth flex">
+            <button class="google-btn flex">
+              <img src="src/Images/google-color-icon.png" />
+              <!-- <i class="fa-brands fa-google"></i> Google -->
+              Google
+            </button>
+            <button class="github-btn flex">
+              <i class="fa-brands fa-github"></i>
+              Github
+            </button>
+          </div>
+
+          <form action="submit"></form>
+        </div>
+        <!-- SignIn Ends Here-->
+        <!-- Signup Starts Here-->
+        <div class="auth-container auth-signup hidden">
+          <div class="auth-header">
+            <i class="fa-regular fa-circle-user"></i>
+            <h1 class="auth-heading">Create An Account</h1>
+            <p>
+              Already Have An Account?
+              <a href="#" class="overlay-switch-signin-text">Log In</a>
+            </p>
+          </div>
+          <form action="submit" id="signup-form" class="auth-form flex">
+            <div class="name-group">
+              <input
+                type="text"
+                class="signup-first-name"
+                placeholder="First Name"
+                required
+              />
+              <input
+                type="text"
+                class="signup-last-name"
+                placeholder="Last Name"
+                required
+              />
+            </div>
+            <div class="input-group flex">
+              <i class="fa-regular fa-envelope"></i>
+              <input
+                type="email"
+                class="signup-email"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div class="input-group flex">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                type="password"
+                class="signup-password"
+                placeholder="Password"
+                required
+              />
+              <i class="fa-regular fa-eye-slash toggle-password"></i>
+            </div>
+            <div class="input-group flex">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                type="password"
+                class="signup-confirm-password"
+                placeholder="Confirm Password"
+                required
+              />
+              <i class="fa-regular fa-eye-slash toggle-password"></i>
+            </div>
+
+            <button type="submit" class="btn-signup">Create Account</button>
+            <div class="message-box"></div>
+          </form>
+          <p class="alternative-auth-label flex">
+            <span></span>or register with<span></span>
+          </p>
+          <!-- Social Signup Buttons -->
+          <div class="social-auth flex">
+            <button class="google-btn flex">
+              <img src="src/Images/google-color-icon.png" />
+              <!-- <i class="fa-brands fa-google"></i> Google -->
+              Google
+            </button>
+            <button class="github-btn flex">
+              <i class="fa-brands fa-github"></i> Github
+            </button>
+          </div>
+
+          <form action="submit"></form>
+        </div>
+
+        <div class="info-container info-signup hidden">
+          <img src="src/Images/Dashboard Background Design.jpg" />
+          <div class="overlay-container">
+            <h1>Join Us Today</h1>
+            <p>
+              Create your account and start exploring endless possibilities.
+            </p>
+            <br />
+            <button
+              type="submit"
+              class="info-btn-signup overlay-switch-signin-btn"
+            >
+              Log in
+            </button>
+          </div>
+        </div>
+        <!-- Signup Ends Here-->
+      </div>
+    </main>
+  </body>
+</html>
